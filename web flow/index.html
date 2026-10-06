@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modul Pembelajaran Flowchart Lengkap: Konsep Dasar, Simbol ANSI/ISO, Jenis, Algoritma, 20 Studi Kasus, dan Implementasi Pemrograman Python.">
+  <meta name="author" content="Instruktur Algoritma & Pemrograman">
+  <title>FLOWCHART: Konsep Dasar, Simbol, Jenis, Algoritma, dan Implementasi</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Component Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flowchart.css">
+  <link rel="stylesheet" href="css/quiz.css">
+
+  <!-- Mermaid.js for Vector Diagram Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        securityLevel: 'loose',
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: 'basis'
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <!-- App Shell Container -->
+  <div class="app-container">
+
+    <!-- Left Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">📊</div>
+        <div class="logo-text">
+          <h1>FLOWCHART</h1>
+          <span>Modul Interaktif</span>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="sidebar-search">
+        <div class="search-input-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="course-search-input" placeholder="Cari materi / simbol..." aria-label="Cari materi">
+        </div>
+      </div>
+
+      <!-- Navigation Chapter List -->
+      <nav class="sidebar-nav" id="sidebar-nav-list"></nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <span>© 2026 Edu Informatika</span>
+        <span>v2.0 PRO</span>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+
+      <!-- Top Sticky Bar -->
+      <header class="top-header">
+        <div class="header-left">
+          <button type="button" class="menu-toggle-btn" id="mobile-menu-btn" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <span>Modul Pembelajaran</span> / <span class="current" id="breadcrumb-current">BAB I: Pengenalan</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Buka Buku Materi Lengkap -->
+          <a href="buku.html" target="_blank" class="btn btn-primary btn-sm" title="Buka Buku Materi Lengkap Seluruh Bab (Siap Cetak PDF)">
+            📖 Buku Materi Lengkap (PDF)
+          </a>
+          <!-- Theme Dark/Light Toggle -->
+          <button type="button" class="btn-icon" id="theme-toggle-btn" onclick="window.app.toggleTheme()" title="Ganti Tema">
+            ☀️
+          </button>
+          <!-- Print / Export to PDF Button -->
+          <button type="button" class="btn btn-outline btn-sm" onclick="window.app.printDocument()" title="Cetak atau Simpan PDF">
+            🖨️ Cetak / PDF
+          </button>
+        </div>
+
+        <!-- Scroll Progress Bar -->
+        <div class="reading-progress-bar" id="reading-progress"></div>
+      </header>
+
+      <!-- Dynamic Content View Target -->
+      <main class="content-container" id="main-content-target">
+        <div class="loading-state" style="text-align:center; padding: 4rem;">
+          <h3>⏳ Memuat Modul Pembelajaran Flowchart...</h3>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Injected SVG Definitions for 18 ANSI/ISO Symbols -->
+  <div id="svg-defs-container"></div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/flowchart-svg.js"></script>
+  <script>
+    // Inject vector gradients once loaded
+    if (window.getSvgGradients) {
+      document.getElementById('svg-defs-container').innerHTML = window.getSvgGradients();
+    }
+  </script>
+  <script src="js/data-content.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/playground.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

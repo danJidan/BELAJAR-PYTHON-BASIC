@@ -1,0 +1,20 @@
+{
+  "name": "flowchart-master-course",
+  "version": "2.0.0",
+  "description": "Modul Pembelajaran Flowchart Lengkap: Konsep Dasar, Simbol, Jenis, Algoritma, 20 Studi Kasus, dan Implementasi Python",
+  "scripts": {
+    "start": "python server.py",
+    "serve": "npx serve . -p 3000",
+    "dev": "python server.py"
+  },
+  "keywords": [
+    "flowchart",
+    "algoritma",
+    "pemrograman",
+    "python",
+    "edukasi",
+    "informatika"
+  ],
+  "author": "Instruktur Algoritma & Pemrograman",
+  "license": "CC-BY-4.0"
+}

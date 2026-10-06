@@ -1,0 +1,336 @@
+/* ==========================================================================
+   QUIZ & PLAYGROUND STYLESHEET
+   Interactive assessments, options, scores, and live Mermaid sandbox layout
+   ========================================================================== */
+
+/* Quiz Header Card */
+.quiz-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-info h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.quiz-info p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.quiz-score-badge {
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.quiz-score-badge .score-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: block;
+}
+
+.quiz-score-badge .score-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Quiz List & Item Cards */
+.quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.quiz-item-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s;
+}
+
+.quiz-item-card:hover {
+  border-color: var(--primary-border);
+}
+
+.quiz-q-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-q-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+
+/* Multiple Choice Options */
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.quiz-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quiz-opt-btn:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.opt-letter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.correct-opt {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  border-color: var(--accent-emerald) !important;
+  color: #065f46 !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .correct-opt {
+  color: #34d399 !important;
+}
+
+.wrong-opt {
+  background-color: rgba(244, 63, 94, 0.15) !important;
+  border-color: var(--accent-rose) !important;
+  color: #9f1239 !important;
+  text-decoration: line-through;
+}
+
+[data-theme="dark"] .wrong-opt {
+  color: #fb7185 !important;
+}
+
+/* Explanation Box */
+.quiz-explanation {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(37, 99, 235, 0.08);
+  border-left: 4px solid var(--primary);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* True / False Buttons */
+.bs-btn-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-bs {
+  flex: 1;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-bs:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.btn-bs-correct {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: var(--accent-emerald) !important;
+  color: #10b981 !important;
+}
+
+.btn-bs-wrong {
+  background-color: rgba(244, 63, 94, 0.2) !important;
+  border-color: var(--accent-rose) !important;
+  color: #f43f5e !important;
+}
+
+/* Symbol Challenge Grid */
+.symbols-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.symbol-challenge-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.symbol-chal-num {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+.symbol-chal-shape {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0.5rem 0 1rem;
+}
+
+.reveal-content {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.reveal-content.show {
+  display: block;
+}
+
+/* ==========================================================================
+   INTERACTIVE PLAYGROUND SANDBOX
+   ========================================================================== */
+.playground-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.playground-editor-col, .playground-render-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.playground-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.playground-toolbar h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.playground-select {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.playground-textarea {
+  width: 100%;
+  height: 380px;
+  background-color: #0b1120;
+  color: #f8fafc;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+}
+
+.playground-render-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  height: 380px;
+  overflow: auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.playground-controls {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .playground-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

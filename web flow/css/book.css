@@ -1,0 +1,447 @@
+/* ==========================================================================
+   FLOWCHART MASTER COURSE - E-BOOK & PRINT STYLESHEET (book.css)
+   Designed for Academic Textbook Layout, E-Book Reading & Clean PDF Export
+   ========================================================================== */
+
+/* Page Setup & Global Rules */
+.book-body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Floating Sticky Toolbar */
+.book-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.toolbar-left, .toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+  margin: 0 0.5rem;
+}
+
+.toc-select {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.toc-select:focus {
+  border-color: var(--primary);
+}
+
+/* Container Buku */
+.book-container {
+  max-width: 1000px;
+  margin: 80px auto 60px;
+  padding: 0 1.5rem;
+}
+
+.book-page {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+/* Halaman Sampul (Cover Page) */
+.book-cover {
+  text-align: center;
+  padding: 5rem 3rem 4rem;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-subtle) 100%);
+  border: 2px solid var(--primary-border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 850px;
+}
+
+.cover-top-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.cover-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.cover-badge-ver {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.cover-header {
+  margin: 2rem 0;
+}
+
+.cover-icon {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.cover-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.cover-subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.cover-decoration-line {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+  margin: 1.5rem auto;
+  border-radius: 2px;
+}
+
+.cover-tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.cover-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 3rem 0;
+  text-align: left;
+}
+
+.meta-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.meta-val {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.cover-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Formal Chapter Header */
+.chapter-header-formal {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chapter-pill-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.chapter-pre-num {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.chapter-title-formal {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-subtitle-formal {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.section-heading-formal {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+/* Table of Contents */
+.toc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toc-row {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.toc-link {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.toc-link:hover {
+  color: var(--primary);
+}
+
+.toc-ch-num {
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 90px;
+}
+
+.toc-ch-title {
+  flex-shrink: 0;
+}
+
+.toc-dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--text-dim);
+  margin: 0 0.75rem;
+}
+
+.toc-badge-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.toc-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 90px;
+  margin-top: 0.2rem;
+}
+
+/* Back Cover */
+.book-back-cover {
+  text-align: center;
+  padding: 5rem 3rem;
+  background: linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg-surface) 100%);
+  border: 1px solid var(--border-color);
+}
+
+.back-cover-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.book-back-cover h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.book-back-cover p {
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.back-cover-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+/* ==========================================================================
+   PRINT MEDIA RULES (SPECIAL FOR CLEAN A4 BOOK PDF EXPORT)
+   ========================================================================== */
+@page {
+  size: A4 portrait;
+  margin: 18mm 15mm 20mm 15mm;
+}
+
+@media print {
+  /* Hide interactive toolbar */
+  .no-print, .book-toolbar {
+    display: none !important;
+  }
+
+  body.book-body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.6 !important;
+  }
+
+  .book-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .book-page {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    background: transparent !important;
+  }
+
+  /* Force page breaks between chapters */
+  .page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .book-cover {
+    min-height: 98vh !important;
+    border: 3px double #2563eb !important;
+    padding: 30mm 20mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    background: #ffffff !important;
+  }
+
+  .cover-title {
+    font-size: 26pt !important;
+    color: #0f172a !important;
+  }
+
+  .chapter-title-formal {
+    font-size: 18pt !important;
+    color: #0f172a !important;
+  }
+
+  .section-heading-formal {
+    font-size: 13pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Prevent awkward splits */
+  .feature-card,
+  .example-card-full,
+  .mermaid-container,
+  .table-custom,
+  .code-wrapper,
+  .symbol-card,
+  .qa-book-item,
+  .project-card,
+  .mistake-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    border: 1px solid #d1d5db !important;
+    background: #f9fafb !important;
+  }
+
+  .table-custom th {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+  }
+
+  .code-wrapper pre code {
+    color: #111827 !important;
+  }
+
+  a {
+    color: #1d4ed8 !important;
+    text-decoration: none !important;
+  }
+}
